@@ -34,14 +34,8 @@ class InputScreen extends StatelessWidget {
                   helperText: 'Solo Letras',
                   icon: Icon(Icons.abc),
                   //prefixIcon: Icon(Icons.abc),
-                  suffixIcon: Icon(Icons.bus_alert),
-                  //focusedBorder: OutlineInputBorder(
-                  //   borderSide: BorderSide(color: Colors.green)),
-                  //border: OutlineInputBorder(
-                  //  borderRadius: BorderRadius.all(Radius.circular(10)))
-                  //
                 ),
-              ),
+              )
             ],
           ),
         ),
