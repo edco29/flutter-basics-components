@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/widgets.dart';
+
 class InputScreen extends StatelessWidget {
   const InputScreen({Key? key}) : super(key: key);
 
@@ -8,38 +10,29 @@ class InputScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Input Data")),
       body: Center(
+          heightFactor: 3,
           child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Column(
-            children: [
-              TextFormField(
-                autocorrect: false,
-                initialValue: '',
-                textCapitalization: TextCapitalization.words,
-                autofocus: false,
-                onChanged: (value) {
-                  print('value: $value');
-                },
-                validator: (value) {
-                  if (value == null) {
-                    return "este campo es requerido";
-                  }
-                  return value.length < 10 ? "minimo 10 letras" : null;
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: const InputDecoration(
-                  hintText: 'Nombre del Usuario',
-                  labelText: 'Nombre',
-                  helperText: 'Solo Letras',
-                  icon: Icon(Icons.abc),
-                  //prefixIcon: Icon(Icons.abc),
-                ),
-              )
-            ],
-          ),
-        ),
-      )),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Column(
+                children: const [
+                  CustomInputField(
+                    hintText: "Ingrese usuario",
+                    labelText: "Nombres",
+                    icon: Icons.people,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  CustomInputField(
+                    hintText: "Ingrese apellidos",
+                    labelText: "Apellidos",
+                    icon: Icons.local_convenience_store_outlined,
+                  )
+                ],
+              ),
+            ),
+          )),
     );
   }
 }
